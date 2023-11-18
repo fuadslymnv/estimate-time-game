@@ -1,6 +1,9 @@
 import { useState, useRef } from "react";
+import { User } from "../context/userContext";
 
 export default function Player() {
+  const { userList } = User();
+  console.log(userList);
   const playerName = useRef();
   const [enteredPlayerName, setEnteredPlayerName] = useState(null);
 

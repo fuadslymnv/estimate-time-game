@@ -221,3 +221,46 @@ header p {
     opacity: 0.5;
   }
 }
+
+/* Leaderboard.css */
+
+.leaderboard-container {
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #3c8379;
+  border-radius: 8px;
+  box-shadow: 0 6px 6px #ebfffc84;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #54a399;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(255, 255, 255, 0.7);
+}
+
+.leaderboard-item:first-child {
+  border: 1px solid #ffd300;
+}
+.leaderboard-item:nth-child(2) {
+  border: 1px solid #d600ff;
+}
+.leaderboard-item:nth-child(3) {
+  border: 1px solid #001eff;
+}
+
+.position {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* You can add more styling as needed */
