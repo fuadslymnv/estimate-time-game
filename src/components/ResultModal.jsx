@@ -7,6 +7,7 @@ const ResultModal = forwardRef(function ResultModal(
   const userLost = remainingTime <= 0;
   const formattedRemainingTime = (remainingTime / 1000).toFixed(2);
   const score = Math.round((1 - remainingTime / (targetTime * 1000)) * 100);
+
   const dialog = useRef();
   useImperativeHandle(ref, () => {
     return {
@@ -15,6 +16,8 @@ const ResultModal = forwardRef(function ResultModal(
       },
     };
   });
+  
+
   return createPortal(
     <dialog ref={dialog} className="result-modal" onClose={onReset}>
       {userLost && <h2>You lost!</h2>}
@@ -29,7 +32,8 @@ const ResultModal = forwardRef(function ResultModal(
       <form method="dialog" onSubmit={onReset}>
         <button>Close</button>
       </form>
-    </dialog>, document.getElementById("modal")
+    </dialog>,
+    document.getElementById("modal")
   );
 });
 

@@ -1,9 +1,15 @@
 import { useRef, useState } from "react";
 import ResultModal from "./ResultModal";
-export default function TimerChallenge({ title, targetTime }) {
+export default function TimerChallenge({
+  title,
+  targetTime,
+  liftScore
+}) {
   let timer = useRef();
   let dialog = useRef();
   const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);
+  const score = Math.round((1 - timeRemaining / (targetTime * 1000)) * 100);
+  
   const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
   if (timeRemaining <= 0) {
     clearInterval(timer.current);
@@ -19,6 +25,7 @@ export default function TimerChallenge({ title, targetTime }) {
   }
 
   function handleStop() {
+    liftScore(score);
     dialog.current.open();
     clearInterval(timer.current);
   }

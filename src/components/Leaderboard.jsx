@@ -1,5 +1,3 @@
-// Leaderboard.js
-
 import React from "react";
 import WaveLoader from "./WaveLoader";
 
