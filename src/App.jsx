@@ -25,11 +25,16 @@ function App() {
 
     const handlePostReq = async (userData) => {
       try {
-        const response = await axios.post(
+        await axios.post(
           "https://express-api-leaderboard.vercel.app/api/leaderboard",
           userData
         );
-        console.log(response.data);
+
+        const updatedLeaderboard = await axios.get(
+          "https://express-api-leaderboard.vercel.app/api/leaderboard"
+        );
+
+        setLeaderboardData(updatedLeaderboard.data);
       } catch (err) {
         console.error("Error making post request", err.message);
       }
@@ -45,7 +50,7 @@ function App() {
       .then((res) => {
         setLeaderboardData(res.data);
       });
-  }, [playerDetail.score]);
+  }, [playerDetail]);
 
   return (
     <>
