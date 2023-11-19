@@ -22,7 +22,6 @@ function App() {
   function handleScore(data) {
     setScore(data);
     const userDetail = { ...playerDetail, score: data };
-    console.log(userDetail);
 
     const handlePostReq = async (userData) => {
       try {
