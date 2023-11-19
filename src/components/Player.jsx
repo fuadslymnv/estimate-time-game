@@ -6,8 +6,8 @@ export default function Player({ handleName }) {
   const [enteredPlayerName, setEnteredPlayerName] = useState(null);
 
   const handleClick = () => {
-    setEnteredPlayerName(playerName.current.value);
-    handleName(playerName.current.value);
+    setEnteredPlayerName(playerName.current.value.charAt(0).toUpperCase()+ playerName.current.value.slice(1).toLowerCase());
+    handleName(playerName.current.value.charAt(0).toUpperCase()+ playerName.current.value.slice(1).toLowerCase());
     playerName.current.value = "";
   };
 
